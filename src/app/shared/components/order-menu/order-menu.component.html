@@ -1,0 +1,43 @@
+<section class="orde_by">
+  <span class="orden_by span_order">Ordenar por</span>
+  <mat-form-field>
+  <mat-select >
+    @for (order of orders; track order) {
+      <mat-option [value]="order.value">{{order.viewValue}}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+</section>
+<section class="wrapper">
+  <div class="section_a">
+    <div class="section_category_price">
+      <div class="container_categoria">
+        <label for="">Marcas</label>
+        <div class="categorias" *ngFor="let category of categories">
+          <input type="checkbox" name="{{category.name}}" id="{{category.id}}" (change)="categorySelected($event, category)"/>
+          <label for="{{category.id}}">{{category.name}}</label>
+        </div>
+        <div class="container_price">
+          <label for="">Precio</label>
+          <div class="price">
+            <input
+              type="text"
+              name="min_price"
+              id="min_price"
+              placeholder="100"
+            />
+            -
+            <input
+              type="text"
+              name="max_price"
+              id="max_price"
+              placeholder="5,000"
+            />
+          </div>
+        </div>
+        <div class="continaer_reviews"></div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="section_b"></div> -->
+</section>

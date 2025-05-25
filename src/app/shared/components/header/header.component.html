@@ -1,0 +1,34 @@
+<header class="header-container">
+    <section class="login-container">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <text x="20" y="30" font-family="Arial, sans-serif" font-size="30" fill="white">Macro</text>
+                <text x="102" y="30" font-family="Arial, sans-serif" font-size="30" fill="#FFD500">Pay</text>
+                <path d="M108 32 A20 20 0 0 0 135 32" stroke="#FFD500" stroke-width="4" fill="none" />
+            </svg>
+        </div>
+        <div class="btns">
+            <button mat-flat-button class="basic-btn">Crea tu cuenta</button>
+            <button mat-button class="login-btn">Inicia sesión</button>
+            <mat-icon>shopping_cart</mat-icon>
+        </div>
+        <div class="credit">
+            <div class="credit-badge">
+                <span>COMPRA A<br><strong>CRÉDITO</strong></span>
+            </div>
+        </div>
+    </section>
+    <section class="nav-container">
+        <mat-toolbar color="primary" class="navbar-toolbar">
+            <nav class="navbar-links">
+                <a mat-button routerLink="/" routerLinkActive="active-link">Home</a>
+                <a mat-button routerLink="/products" routerLinkActive="active-link">Celulares</a>
+                <a mat-button routerLink="/motos" routerLinkActive="active-link">Motocicletas</a>
+                <a mat-button routerLink="/prestamos" routerLinkActive="active-link">Tus prestamos</a>
+                <a mat-button routerLink="/tiendas" routerLinkActive="active-link">Tiendas</a>
+                <a mat-button routerLink="/traking" routerLinkActive="active-link">Tranking</a>
+                <a mat-button routerLink="/products" routerLinkActive="active-link">Club Macropay</a>
+            </nav>
+        </mat-toolbar>
+    </section>
+</header>

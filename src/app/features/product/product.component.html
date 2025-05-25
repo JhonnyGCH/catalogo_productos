@@ -1,0 +1,23 @@
+<div class="grid-container">
+  <app-order-menu (categoriesSelect)="categoriesSelect($event)"></app-order-menu>
+  <section class="products_container" >
+    <div class="card_product"   *ngFor="let product of productos">
+      <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"  alt="">
+      <div class="description">
+        <p class="nombre_product">{{product.name}}</p>
+        <p class="nombre_price">${{product.price}}</p>
+      </div>
+      <div class="calification">
+        <p class="nombre_price_descuento">${{product.price}}</p>
+      </div>
+      <div class="information">
+        <div class="calculate">
+          <p>$120 p/semana</p>
+          <p>a $520 p/mes</p>
+
+        </div>
+        <button>Lo Quiero!</button>
+      </div>
+    </div>
+  </section>
+</div>

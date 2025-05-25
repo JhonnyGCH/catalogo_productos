@@ -1,0 +1,98 @@
+.wrapper {
+  width: 260px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.orde_by {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.span_order {
+  font-weight: 500;
+  color: #666;
+}
+
+.button_order {
+  padding: 0.3rem 0.8rem;
+  background: #f2f4f8;
+  border: 1px solid #cfd4dc;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.section_category_price {
+  max-height: 450px;
+  overflow-y: auto;
+  padding-top: 1rem;
+}
+
+.container_categoria label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #4a4a4a;
+}
+
+.categorias {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.categorias label {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.container_price {
+  margin-top: 1rem;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.price input {
+  width: 80px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.continaer_reviews {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.continaer_reviews::before {
+  content: "★★★★★";
+  font-size: 18px;
+  color: var(--color-secondary-light);
+  letter-spacing: 0.1rem;
+}
+
+.section_a > div:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+mat-form-field {
+  width: 50%;
+}
