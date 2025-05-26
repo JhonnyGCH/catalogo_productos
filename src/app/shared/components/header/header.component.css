@@ -41,7 +41,7 @@
 .credit-badge {
    width: 10rem;
   height: 10rem;
-  background: linear-gradient(135deg, #fdd835, #fbc02d);
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
   border-radius: 50%;
   display: flex;
   align-items: center;

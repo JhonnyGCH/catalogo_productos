@@ -1,21 +1,20 @@
+import { Product } from "./product.entity";
 
-import { SubCategory } from "./subcategory.entity";
-
-export class Category {
+export class SubCategory {
     id: number;
     name: string;
     description?: string;
-    children: SubCategory[];
+    products: Product[];
   
     constructor(
       id: number,
       name: string,
       description?: string,
-      children: SubCategory[] = []
+      products: Product[] = []
     ) {
       this.id = id;
       this.name = name;
       this.description = description;
-      this.children = children;
+      this.products = products;
     }
   }

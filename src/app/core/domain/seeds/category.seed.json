@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "nombre": "Motocicletas",
+    "descripcion": "Vehículos de dos ruedas de diversas marcas y estilos.",
+    "subcategorias": [
+      {
+        "id": 11,
+        "nombre": "Yamaha",
+        "descripcion": "Motocicletas Yamaha",
+        "productos": [
+          {
+            "id": 111,
+            "nombre": "Yamaha FZ 25",
+            "precio": 9500000,
+            "cantidad": 5,
+            "estrellas": 4,
+            "imagen": "https://www.incolmotos-yamaha.com.co/wp-content/uploads/2019/08/fz25_negra.jpg"
+          },
+          {
+            "id": 112,
+            "nombre": "Yamaha MT-03",
+            "precio": 22000000,
+            "cantidad": 3,
+            "estrellas": 2,
+            "imagen": "https://www.incolmotos-yamaha.com.co/wp-content/uploads/2018/03/MT03_2024_AZUL-1.png"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "nombre": "Honda",
+        "descripcion": "Motocicletas Honda",
+        "productos": [
+          {
+            "id": 121,
+            "nombre": "Honda CB 190R",
+            "precio": 12500000,
+            "cantidad": 4,
+            "estrellas": 5,
+            "imagen": "https://hondasupermotos.com/wp-content/uploads/2024/09/Honda-CB190R-Azul.webp"
+          },
+          {
+            "id": 122,
+            "nombre": "Honda XRE 300",
+            "precio": 18500000,
+            "cantidad": 2,
+            "estrellas": 5,
+            "imagen": "https://motos.honda.com.ec/uploads/galeria/xre300-subir.jpg"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "nombre": "TVS",
+        "descripcion": "Motocicletas TVS",
+        "productos": [
+          {
+            "id": 131,
+            "nombre": "RAIDER TVS 125",
+            "precio": 6500000,
+            "cantidad": 4,
+            "estrellas": 4,
+            "imagen": "https://web2.fireboldweb.com/wp-content/uploads/2025/02/200220251740065303tvs_raider_125_negra_nebulosa_foto8.png"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "nombre": "NKD",
+        "descripcion": "Motocicletas NKD",
+        "productos": [
+          {
+            "id": 132,
+            "nombre": "NKD 125",
+            "precio": 4800000,
+            "cantidad": 6,
+            "estrellas": 3,
+            "imagen": "https://discolmotos.com/wp-content/uploads/2020/01/nkd-125-negra-2.jpg"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "nombre": "Bajaj",
+        "descripcion": "Motocicletas Bajaj",
+        "productos": [
+          {
+            "id": 133,
+            "nombre": "DISCOVER 125",
+            "precio": 5300000,
+            "cantidad": 5,
+            "estrellas": 3,
+            "imagen": "https://masmotos.co/wp-content/uploads/2022/10/1-discover-125-str-pro-negro-infinito-amarillo.webp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Celulares",
+    "descripcion": "Smartphones de diferentes marcas y gamas.",
+    "subcategorias": [
+      {
+        "id": 21,
+        "nombre": "Samsung",
+        "descripcion": "Teléfonos inteligentes Samsung",
+        "productos": [
+          {
+            "id": 211,
+            "nombre": "Samsung Galaxy S23",
+            "precio": 4299000,
+            "cantidad": 10,
+            "estrellas": 4,
+            "imagen": "https://images.samsung.com/is/image/samsung/p6pim/co/2302/gallery/co-galaxy-s23-s918-sm-s918bzkkltc-534860569?$684_547_PNG$"
+          },
+          {
+            "id": 212,
+            "nombre": "Samsung Galaxy A54",
+            "precio": 1899000,
+            "cantidad": 15,
+            "estrellas": 1,
+            "imagen": "https://img.global.news.samsung.com/latin/wp-content/uploads/2023/03/dl9_Galaxy-A34-5G_Awesome-Violet_Front-e1680727963881.jpg"
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "nombre": "Apple",
+        "descripcion": "Teléfonos inteligentes iPhone",
+        "productos": [
+          {
+            "id": 221,
+            "nombre": "iPhone 15",
+            "precio": 4699000,
+            "cantidad": 6,
+            "estrellas": 5,
+            "imagen": "https://www.clevercel.co/cdn/shop/files/5_98c5870d-6ece-4b20-bd2e-c9608fe359ec.jpg?v=1747428993"
+          },
+          {
+            "id": 222,
+            "nombre": "iPhone 15 Pro Max",
+            "precio": 6999000,
+            "cantidad": 3,
+            "estrellas": 5,
+            "imagen": "https://www.clevercel.co/cdn/shop/files/Portadas_iPhone15ProMax.webp?v=1748028927"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "nombre": "Xiaomi",
+        "descripcion": "Celulares Xiaomi",
+        "productos": [
+          {
+            "id": 231,
+            "nombre": "POCO X6 PRO",
+            "precio": 1899000,
+            "cantidad": 10,
+            "estrellas": 4,
+            "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeQldxrjgEXQ8SVhLyXD_60prB43_ULixbJw&s"
+          },
+          {
+            "id": 232,
+            "nombre": "POCO F6 PRO",
+            "precio": 2299000,
+            "cantidad": 8,
+            "estrellas": 5,
+            "imagen": "https://exitocol.vtexassets.com/arquivos/ids/24418234/celular-xiaomi-poco-f6-pro-512-gb-12-ram-4g-blanco.jpg?v=638608903808230000"
+          },
+          {
+            "id": 233,
+            "nombre": "XIAOMI NOTE 10 PRO",
+            "precio": 1399000,
+            "cantidad": 12,
+            "estrellas": 4,
+            "imagen": "https://www.clevercel.co/cdn/shop/files/Portadas_Xiaomi_redmi_note10_pro.webp?v=1747429205"
+          },
+          {
+            "id": 234,
+            "nombre": "XIAOMI NOTE 13 PRO",
+            "precio": 1699000,
+            "cantidad": 7,
+            "estrellas": 5,
+            "imagen": "https://i02.appmifile.com/27_item_co/30/09/2024/e2f779db99406a05c52ba126175897e3!400x400!85.png"
+          }
+        ]
+      }
+    ]
+  }
+]

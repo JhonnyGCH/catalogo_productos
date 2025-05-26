@@ -1,33 +1,20 @@
-import { Category } from "../../domain/entities/category.entity";
-import { CATEGORY_SEED } from "../../domain/seeds/category.seed";
+import { CategoryMapper } from '../../application/mappers/category.mapper';
+import { Category } from '../../domain/entities/category.entity';
+import categoriesJson from '../../domain/seeds/category.seed.json';
+import { CategoriaDto } from '../dto/categoria.dto';
 
 export class CategoryApi {
-    findAll():Category[] {
-        return CATEGORY_SEED;
-    }
-    findById(id: number): Category | null {
-        return CATEGORY_SEED.find((category) => category.id === id)|| null;
-    }
-    create(category: Category): Category {
-        const newCategory = { ...category, id: CATEGORY_SEED.length + 1 };
-        CATEGORY_SEED.push(newCategory);
-        return newCategory;
-    }
-    update( updatedCategory: Category): Category | null {
-        const index = CATEGORY_SEED.findIndex((category) => category.id === updatedCategory.id);
-        if (index !== -1) {
-            CATEGORY_SEED[index] = { ...updatedCategory };
-            return CATEGORY_SEED[index];
-        }
-        return null;
-    }
-    delete(id: number): boolean {
-        const index = CATEGORY_SEED.findIndex((category) => category.id === id);
-        if (index !== -1) {
-            CATEGORY_SEED.splice(index, 1);
-            return true;
-        }
-        return false;
-    }
-    
+  categories = categoriesJson;
+
+  /**
+   * Funcion para obtener todas las categorias
+   * @returns las categorias
+   */
+  findAll(): Category[] {
+    const response = JSON.parse(JSON.stringify(this.categories));
+    return response.map(
+      (categoriaDto: CategoriaDto): Category =>
+        CategoryMapper.fromDto(categoriaDto)
+    );
+  }
 }

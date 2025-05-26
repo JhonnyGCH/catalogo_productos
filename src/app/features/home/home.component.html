@@ -1,1 +1,96 @@
-<p>home works!</p>
+<section class="grid-container">
+  <app-order-menu (subCategoriesSelect)="subCategoriesSelect($event)"></app-order-menu>
+  <article class="products_container">
+    <div class="card_product" *ngFor="let product of productos">
+      <img class="img-product" src="{{product.image}}" alt=""  (click)="showProduct(product)">
+      <div class="description">
+        <p class="name_product" (click)="showProduct(product)">{{product.name}} </p>
+        <p class="name_price">${{product.price}}</p>
+      </div>
+      <div class="calification">
+        <app-star-rating [rating]="product.stars ?? 0"></app-star-rating>
+        <p class="name_price_descuento">${{product.price}}</p>
+      </div>
+      <div class="information">
+        <div class="calculate">
+          <p>$120 p/semana</p>
+          <p>a $520 p/mes</p>
+        </div>
+        <button (click)="openModal(product)">Lo Quiero!</button>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="banner">
+  <img class="img-banner" src="https://tecstore.pe/media/catalog/category/TEC_Banner-Web_Categoria_CELULARES.jpg"
+    alt="banner">
+</section>
+
+
+
+<section class="modal-overlay" *ngIf="selectedProduct" (click)="onOverlayClick($event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="person-image-container">
+        <img title="Imagen del producto"
+          src="https://img.freepik.com/foto-gratis/chico-guapo-barba-elegante-posando-contra-pared-blanca_176420-33011.jpg?semt=ais_hybrid&w=740"
+          alt="{{selectedProduct.name}}" class="product-image">
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="product-info-container">
+        <div class="product-image-container">
+          <img class="img-product" src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="">
+        </div>
+        <div class="product-details">
+          <div class="price-section">
+            <span class="currency">$</span>
+            <span class="price">{{ selectedProduct.price }}</span>
+            <span class="quantity">x 1</span>
+          </div>
+
+          <div class="product-info">
+            <h3 class="product-name">{{ selectedProduct.name }}</h3>
+            <p class="product-specs">64GB, 4GB RAM</p>
+          </div>
+
+          <div class="color-section">
+            <span class="color-label">Color seleccionado: </span>
+            <span class="color-value">Gris Ratón</span>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="cart-info">
+        <div class="cart-item">
+          <span class="cart-text">1 ítem en tu carrito</span>
+          <span class="cart-total">Subtotal ${{ selectedProduct.price }}</span>
+        </div>
+      </div>
+
+      <div class="check-icon">
+        <div class="check-circle">
+          <mat-icon>check</mat-icon>
+        </div>
+      </div>
+
+      <div class="financing-info">
+        <p class="financing-text">Te vas a llevar este celular por solo</p>
+        <p class="financing-price">$120 p/semana!</p>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn-credit">COMPRAR A CRÉDITO</button>
+        <div class="divider">
+          <span>o puedes</span>
+        </div>
+        <button class="btn-cash">Comprar a contado</button>
+      </div>
+    </div>
+    
+  </div>
+</section>

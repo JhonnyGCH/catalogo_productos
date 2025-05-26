@@ -1,0 +1,34 @@
+<div class="search-container">
+    <div class="search-bar">
+        <div class="search-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+        </div>
+
+        <input type="text" aria-label="Buscar" class="search-input" [placeholder]="placeholder" [(ngModel)]="searchTerm"
+            (input)="search()" (keyup.enter)="enterPress()">
+
+        <div class="category-dropdown">
+            <button class="category-button" (click)="toggleDropdown()" [class.active]="isDropdownOpen">
+                <span class="category-text">{{ selectedCategory }}</span>
+                <svg class="dropdown-arrow" [class.rotated]="isDropdownOpen" width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6,9 12,15 18,9"></polyline>
+                </svg>
+            </button>
+
+            <div class="dropdown-menu" [class.show]="isDropdownOpen">
+                <div class="dropdown-item" (click)="showAllCategories()"
+                    [class.selected]="selectedCategory === 'Todas las Categorías'">
+                    Todas las Categorías
+                </div>
+                <div class="dropdown-item" *ngFor="let category of categories" (click)="selectCategory(category)"
+                    [class.selected]="category.name === selectedCategory">
+                    {{ category.name }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

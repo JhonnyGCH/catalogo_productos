@@ -1,0 +1,8 @@
+<div class="star-rating">
+    <span *ngFor="let star of stars; let i = index" class="star" [class.filled]="i < currentRating"
+        [class.clickable]="interactive" (click)="onStarClick(i + 1)" (mouseenter)="onStarHover(i + 1)"
+        (mouseleave)="onMouseLeave()">
+        ★
+    </span>
+    
+</div>

@@ -1,43 +1,57 @@
+<app-search-bar [placeholder]="'Buscar productos...'" (searchEvent)="search($event)"
+  (categoriesSelect)="categoriesSelect($event)">
+
+</app-search-bar>
 <section class="orde_by">
   <span class="orden_by span_order">Ordenar por</span>
   <mat-form-field>
-  <mat-select >
-    @for (order of orders; track order) {
+    <mat-select>
+      @for (order of orders; track order) {
       <mat-option [value]="order.value">{{order.viewValue}}</mat-option>
-    }
-  </mat-select>
-</mat-form-field>
+      }
+    </mat-select>
+  </mat-form-field>
 </section>
 <section class="wrapper">
-  <div class="section_a">
-    <div class="section_category_price">
-      <div class="container_categoria">
-        <label for="">Marcas</label>
-        <div class="categorias" *ngFor="let category of categories">
-          <input type="checkbox" name="{{category.name}}" id="{{category.id}}" (change)="categorySelected($event, category)"/>
-          <label for="{{category.id}}">{{category.name}}</label>
-        </div>
-        <div class="container_price">
-          <label for="">Precio</label>
-          <div class="price">
-            <input
-              type="text"
-              name="min_price"
-              id="min_price"
-              placeholder="100"
-            />
-            -
-            <input
-              type="text"
-              name="max_price"
-              id="max_price"
-              placeholder="5,000"
-            />
-          </div>
-        </div>
-        <div class="continaer_reviews"></div>
+  <div class="section_filter">
+
+    <div class="container_categoria">
+      <label class="title">Marcas</label>
+      <div class="categorias" *ngFor="let sub of subCategories">
+        <input type="checkbox" name="{{sub.name}}" id="{{sub.id}}" (change)="categorySelected($event, sub)" />
+        <label for="{{sub.id}}">{{sub.name}}</label>
       </div>
     </div>
+    <div class="container_price">
+      <label class="title">Precio</label>
+      <div class="price">
+        <input type="number" name="min_price" id="min_price" placeholder="100" [(ngModel)]="minPrice"
+          (input)="priceSelected()" />
+        -
+        <input type="number" name="max_price" id="max_price" placeholder="5,000" [(ngModel)]="maxPrice"
+          (input)="priceSelected()" />
+      </div>
+    </div>
+    <div class="container_reviews">
+      <label class="title">Reviews</label>
+      <div class="reviews">
+        <app-star-rating [rating]="currentRating" [interactive]="true"
+          (ratingSelected)="ratingSelected($event)"></app-star-rating>
+      </div>
+    </div>
+    <div class="container_memory">
+      <label class="title">Memoria</label>
+
+    </div>
+    <div class="container_rango">
+      <label class="title">Rango</label>
+
+    </div>
+    <div class="container_camara">
+      <label class="title">Camara</label>
+
+    </div>
   </div>
-  <!-- <div class="section_b"></div> -->
+
+
 </section>
