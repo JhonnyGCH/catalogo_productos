@@ -8,29 +8,22 @@
   <div class="product-main">
     <div class="product-images">
       <div class="thumbnails">
-        <div class="thumbnail" 
-             *ngFor="let thumb of getThumbnails(); let i = index"
-             [class.active]="i === selectedImageIndex"
-             (click)="selectImage(i)">
+        <div class="thumbnail" *ngFor="let thumb of getThumbnails(); let i = index"
+          [class.active]="i === selectedImageIndex" (click)="selectImage(i)">
           <img title="Imagen del producto" [src]="thumb" [alt]="'Thumbnail ' + (i + 1)">
         </div>
       </div>
 
       <div class="main-image">
-        <img title="Imagen del producto" [src]="getMainImage()" [alt]="producto.name">
-        <div class="discount-badge" *ngIf="productExtras.discount">{{productExtras.discount}}%</div>
-        <div class="favorite-btn">
-          <i class="heart-icon">♡</i>
-        </div>
+        <img title="Imagen del producto" [src]="producto.image" [alt]="producto.name">
+        <div class="discount-badge" *ngIf="producto.discount">{{producto.discount}}%</div>
       </div>
     </div>
 
     <div class="product-info">
       <h1 class="product-title">{{producto.name}}</h1>
       <div class="rating" *ngIf="producto.stars">
-        <span class="star" 
-              *ngFor="let filled of getStars()" 
-              [class.filled]="filled">★</span>
+        <span class="star" *ngFor="let filled of getStars()" [class.filled]="filled">★</span>
       </div>
 
       <div class="stock-info" [class.low-stock]="producto.stock < 10" [class.out-of-stock]="producto.stock === 0">
@@ -43,41 +36,39 @@
         <span class="amount">{{producto.price | number:'1.0-0'}}</span>
       </div>
 
-      <p class="description">{{productExtras.description}}</p>
+      <p class="description">{{producto.description}}</p>
     </div>
   </div>
 
   <div class="product-details">
     <h2 class="details-title">Información Detallada del Producto</h2>
-    
-    <div class="detail-images">
-      <img title="Imagen del producto" *ngFor="let image of productExtras.detailImages" [src]="image" [alt]="producto.name">
-    </div>
 
-    <div class="tabs">
-      <div class="tab-headers">
-        <button class="tab-header" 
-                [class.active]="selectedTab === 'specifications'"
-                (click)="selectTab('specifications')">
-          Otras Especificaciones
-        </button>
-        <button class="tab-header" 
-                [class.active]="selectedTab === 'reviews'"
-                (click)="selectTab('reviews')">
-          Reviews (3)
-        </button>
+    <div class="detail-divider">
+      <div class="detail-images">
+        <img title="Imagen del producto" *ngFor="let image of getDetailImages()" [src]="image" [alt]="producto.name">
       </div>
 
-      <div class="tab-content">
-        <div *ngIf="selectedTab === 'specifications'" class="specifications">
-          <div class="spec-row" *ngFor="let spec of specifications">
-            <span class="spec-label">{{spec.label}}</span>
-            <span class="spec-value">{{spec.value}}</span>
-          </div>
+      <div class="tabs">
+        <div class="tab-headers">
+          <button class="tab-header" [class.active]="selectedTab === 'specifications'"
+            (click)="selectTab('specifications')">
+            Otras Especificaciones
+          </button>
+          <button class="tab-header" [class.active]="selectedTab === 'reviews'" (click)="selectTab('reviews')">
+            Reviews (3)
+          </button>
         </div>
 
-        <div *ngIf="selectedTab === 'reviews'" class="reviews">
-          <p>Reviews content will go here...</p>
+        <div class="tab-content">
+          <div *ngIf="selectedTab === 'specifications'" class="specifications">
+            <div class="spec-row" *ngFor="let spec of producto.specifications">
+              <span class="spec-label">{{spec.label}}</span>
+              <span class="spec-value">{{spec.value}}</span>
+            </div>
+          </div>
+
+          <div *ngIf="selectedTab === 'reviews'" class="reviews">
+          </div>
         </div>
       </div>
     </div>

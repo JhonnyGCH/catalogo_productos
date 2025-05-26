@@ -81,31 +81,6 @@
   font-size: 14px;
 }
 
-.favorite-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 40px;
-  height: 40px;
-  background: var(--color-white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.favorite-btn:hover {
-  transform: scale(1.1);
-}
-
-.heart-icon {
-  font-size: 20px;
-  color: var(--color-gray);
-}
-
 .product-info {
   flex: 1;
   padding-left: 20px;
@@ -116,12 +91,6 @@
   font-weight: bold;
   margin: 0 0 10px 0;
   color: var(--color-gray-dark);
-}
-
-.product-storage {
-  font-size: 18px;
-  color: var(--color-gray);
-  margin: 0 0 15px 0;
 }
 
 .rating {
@@ -164,9 +133,38 @@
   margin-top: 20px;
 }
 
+.stock-info {
+  margin: 15px 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  background: #e8f5e8;
+  color: var(--color-success);
+  border: 1px solid #c8e6c9;
+}
+
+.stock-info.low-stock {
+  background: var(--color-white);
+  color: var(--color-warning);
+  border-color: var(--color-secondary);
+}
+
+.stock-info.out-of-stock {
+  background: #ffebee;
+  color: var(--color-error);
+  border-color: #ef5350;
+}
+
+.out-of-stock-text {
+  font-weight: bold;
+}
+
 .product-details {
   border-top: 1px solid #eee;
   padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .details-title {
@@ -189,9 +187,11 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-
-.tabs {
-  background: white;
+.detail-divider{
+  display: flex;
+  gap: 8rem;
+  margin-bottom: 30px;
+  justify-content: center;
 }
 
 .tab-headers {
@@ -245,32 +245,6 @@
   color: var(--color-gray);
 }
 
-.stock-info {
-  margin: 15px 0;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-weight: 500;
-  background: #e8f5e8;
-  color: var(--color-success);
-  border: 1px solid #c8e6c9;
-}
-
-.stock-info.low-stock {
-  background: var(--color-white);
-  color: var(--color-warning);
-  border-color: var(--color-secondary);
-}
-
-.stock-info.out-of-stock {
-  background: #ffebee;
-  color: var(--color-error);
-  border-color: #ef5350;
-}
-
-.out-of-stock-text {
-  font-weight: bold;
-}
-
 .error-message {
   display: flex;
   flex-direction: column;
@@ -281,14 +255,10 @@
   padding: 40px;
 }
 
-.error-message h2 {
-  color: var(--color-gray);
-  margin-bottom: 15px;
-}
-
+.error-message h2,
 .error-message p {
   color: var(--color-gray);
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .back-button {

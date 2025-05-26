@@ -17,7 +17,7 @@ export class CategoryMapper {
           child.id,
           child.nombre,
           child.descripcion,
-          child.productos.map(p => new Product(p.id, p.nombre, p.precio, p.cantidad, p.estrellas ?? 0, p.imagen))
+          child.productos.map(p => new Product(p.id, p.nombre, p.precio, p.cantidad, p.estrellas ?? 0, p.imagen, p.especificaciones, p.descripcion, p.descuento))
         )
       });
       
